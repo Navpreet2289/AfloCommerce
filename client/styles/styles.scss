@@ -1,4 +1,4 @@
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import './custom-theme.scss';
 @import '~angular2-busy/build/style/busy.css';
 @import '~nouislider/distribute/nouislider.min.css';
 th {
@@ -24,7 +24,7 @@ h3{
     height: 35px;
 }
 .primary-color {
-    color: #3F51B5!important;
+    color: #1A237E!important;
   }
 .accent-color {
     color: #FF4081!important;
@@ -355,5 +355,3 @@ md-list md-item.list-head {
 md-list md-item.list-head md-item-content {
   padding-left: 64px;
 }
-
-

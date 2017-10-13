@@ -9,7 +9,7 @@ import * as FileSaver from 'file-saver';
 })
 export class ExportComponent implements OnInit {
   @Input() data: any[] = [];
-  @Input() filename: string = 'codenx';
+  @Input() filename: string = 'mla2018';
   data1: string[] = [];
 
   constructor(private snack: MdSnackBar) {

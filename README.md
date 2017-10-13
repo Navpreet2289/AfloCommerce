@@ -1,12 +1,15 @@
 
-# Affillio Shop - [MEAN] Angular4 + Node + Mongo
+# AfloCommerce - [MEAN] Mongo + Express + Angular4 + NodeJS
 
-## eCommerce using Angular4 + Affillio module
+## eCommerce portal tailored for developing with Angular4 + Affillio module
+- Manage your affiliate partners
+- hunt in partner catalog sources and social media of related experts 
+- Manage 'Suggested Goods' derived from partner's catalogs
+- Keep track of 'Suggested Goods' after approval into local shop for sale
+- Benefit from blazing speed and highly scalable NodeJS + TypeScript
 
 ## Quick start
 > Make sure you have **Node** version >= 8.0, **NPM** >= 5 and **MongoDB**
-
-> Download and unzip the file from codecanyon
 
 > Start mongodb in a separate shell
 
@@ -30,4 +33,5 @@ go to [http://0.0.0.0:4200](http://0.0.0.0:4200) or [http://localhost:4200](http
 
 
 ## COMING SOON! ##
-- Full encapsulation of Affillio Module - to include server resources build script
+
+- Full encapsulation of [Affillio AI Module](https://github.com/MichaelLogic/AfloCommerce.git) - the modular affiliate "hunter" 

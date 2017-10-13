@@ -33,7 +33,7 @@ export default class Config {
   };
   orderPlacedEmail = (body: any) => { // Expects email id, orderNo, ...
     return {
-      from: 'CodeNx <chemistry@michaellogic.com>',
+      from: 'AfloCommerce <chemistry@michaellogic.com>',
       to: body.to,
       subject: 'Order Placed Successfully',
       text: 'Order No: ' + body.orderNo
@@ -49,7 +49,7 @@ export default class Config {
   };
   orderUpdatedEmail = (body: any) => {
     return {
-      from: 'CodeNx <chemistry@michaellogic.com>',
+      from: 'AfloCommerce <chemistry@michaellogic.com>',
       to: body.to,
       subject: 'Your Order Status Updated',
       text: 'Order No: ' + body.orderNo

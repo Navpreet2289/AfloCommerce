@@ -15,28 +15,28 @@ User.find(function (err, data) {
       provider: 'local',
       name: 'Test User',
       email: 'user@michaellogic.com',
-      password: 'codenx'
+      password: 'mla2018'
       }, {
         _id: '57c087895c0f110799b4c82e',
         provider: 'local',
         role: 'admin',
         name: 'Mike Logic',
         email: 'chemistry@michaellogic.com',
-        password: 'codenx'
+        password: 'mla2018'
       }, {
         provider: 'local',
         role: 'vendor',
         name: 'Vendor',
         email: 'vendor@michaellogic.com',
-        password: 'codenx'
+        password: 'mla2018'
       }, {
         provider: 'local',
         role: 'manager',
         name: 'Manager',
         email: 'manager@michaellogic.com',
-        password: 'codenx'
+        password: 'mla2018'
       }, function () {
-        console.log('finished populating users');
+        console.log(':: USER SEED COMPLETE ::');
       });
   }
 });
@@ -56,8 +56,9 @@ Address.find(function (err, data) {
         "state": "Illinois",
         "uid": "57c087895c0f110799b4c82e",
         "zip": 60411
-      }
-    );
+      }, function () {
+        console.log(':: ADDRESS SEED COMPLETE ::');
+      });
   }
 });
 
@@ -108,8 +109,9 @@ Shipping.find(function (err, data) {
         "freeShipping": 1000,
         "active": true,
         "__v": 0
-      }
-    );
+      }, function () {
+        console.log(':: SHIPPING SEED COMPLETE ::');
+      });
   }
 });
 
@@ -125,8 +127,9 @@ Coupon.find(function (err, data) {
         "info": "15% discount on all products above $500",
         "minimumCartValue": 500,
         "type": "Discount"
-      }
-    );
+      }, function () {
+        console.log(':: COUPON SEED COMPLETE ::');
+      });
   }
 });
 
@@ -186,7 +189,7 @@ Category.find(function (err, data) {
         ],
         "active": true,
       }, function () {
-        console.log('finished populating categories');
+        console.log(':: CATEGORIES SEED COMPLETE ::');
       });
   }
 });
@@ -209,7 +212,7 @@ Brand.find(function (err, data) {
         "__v": 0,
         "active": true
       }, function () {
-        console.log('finished populating brands');
+        console.log(':: BRAND SEED COMPLETE ::');
       });
   }
 });
