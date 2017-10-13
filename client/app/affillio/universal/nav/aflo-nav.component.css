@@ -1,0 +1,48 @@
+.sidebar {
+  background-color: #2b2e33;
+  left: 0;
+  position: absolute;
+  top: 65px;
+  bottom: 0;
+  width: 150px;
+  z-index: 100;
+}
+
+.nav-item > .aff-button{
+  height: 70px;
+  padding: 10px 15px 12px;
+  text-align: center;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+.aff-button {
+  border-radius: 0;
+  color: #ffffff;
+  display: block;
+  font-family: 'Open Sans';
+  font-size: 13px;
+  letter-spacing: 0.6px;
+  line-height: 30px;
+  padding: 7px 20px;
+  text-align: center;
+  white-space: nowrap;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+}
+
+.aff-button .aff-i {
+  display: block;
+  float: none;
+  font-size: 40px;
+  margin: auto;
+  margin-bottom: 5px;
+  margin-top: 8px;
+
+}
+
+.aff-button .aff-link-text {
+  display: block;
+  margin: auto;
+}

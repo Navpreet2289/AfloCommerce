@@ -1,0 +1,81 @@
+<div [ngBusy]="busy"></div>
+<form [formGroup]="partnerForm" (ngSubmit)="save(partnerForm.value)" autocomplete="false" novalidate>
+	<button md-fab class="floating-fab" color="accent" type="submit">
+  		<md-icon>save</md-icon>
+  	</button>
+  	<div class="app-content">
+	  <div class="page-title">
+      <button mdButton type="button" md-icon-button routerLink="/affillio/partners">
+        <i class="material-icons pull-left">keyboard_backspace</i>
+      </button>
+      <span fxHide.lt-sm>{{header}}</span>
+      <h3>
+
+      </h3>
+
+    </div>
+    <section>
+    	<article>
+        <h3>Partner Info</h3>
+        <div class="column">
+          <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutWrap>
+          	<md-input-container class="full-width">
+              <input mdInput type="companyName" name="companyName" formControlName="companyName" placeholder="Company Name" />
+            </md-input-container>
+          </div>
+
+          <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px"  fxLayoutWrap>
+            <md-input-container fxFlex>
+              <input mdInput type="city" name="city" formControlName="city" placeholder="City" />
+            </md-input-container>
+            <md-input-container>
+              <input mdInput type="state" name="state" formControlName="state" placeholder="State" style="width:30%" />
+            </md-input-container>
+            <md-input-container>
+              <input mdInput type="country" name="country" formControlName="country" placeholder="Country"  style="width:20%" />
+            </md-input-container>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px"  fxLayoutWrap>
+          <md-input-container fxFlex>
+	         <input mdInput type="text" name="avatar" formControlName="avatar" placeholder="Avatar" />
+	         <md-icon mdPrefix (click)="chooseImage()" class="pointer">add_to_photos</md-icon>
+	        </md-input-container>
+    	    <div [hidden]="partnerForm.get('avatar').valid || (partnerForm.get('avatar').pristine && !submitted)">
+    	        <div *ngIf="partnerForm.get('avatar').hasError('required')" class="error">
+    	        Avatar url required
+    	        </div>
+    	    </div>
+
+          <md-input-container class="full-width">
+            <textarea mdInput name="description" formControlName="description" placeholder="Description"></textarea>
+          </md-input-container>
+        </div>
+      </article>
+	  </section>
+    <section>
+      <article>
+        <div class="page-title">Catalog Sources
+          <button type="button" md-raised-button class="mat-primary" routerLink="/affillio/catalog-sources/new"><md-icon>spellcheck</md-icon>New Catalog Source</button>
+        </div>
+        <table>
+          <tbody formArrayName="catalogSources">
+            <tr *ngFor="let f of partnerForm.get('catalogSources')['controls']; let i = index;">
+              <div [formGroupName]="i">
+                <partner-catalog-sources [catalogSources]="catalogSources" [group]="partnerForm.get('catalogSources')['controls'][i]"></partner-catalog-sources>
+              </div>
+              <td>
+                <button type="button" md-icon-button (click)="removeCatalogSource(i);">
+                  <md-icon>delete</md-icon>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button type="button" md-button class="mat-primary" (click)="addCatalogSource()">Add another catalog source</button>
+      </article>
+    </section>
+	</div>
+</form>

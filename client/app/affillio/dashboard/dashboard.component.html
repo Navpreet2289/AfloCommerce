@@ -1,0 +1,41 @@
+<aflo-nav></aflo-nav>
+
+<div [ngBusy]="busy"></div>
+
+<!-- start of MAIN CONTENT -->
+<div class="main-content">
+	<div class="page-content">
+
+  <div fxLayout="row" fxLayoutAlign="start center">
+    <h2> Affillio Dashboard </h2>
+  </div>
+  <!-- <span class="app-toolbar-filler"></span> -->
+  <md-grid-list cols="3" 
+			  md-row-height="1:1" 
+			  gutterSize="20px" 
+			  class="afloGaugeTiles">
+	<md-grid-tile *ngFor="let gauge of gauges" md-rowspan="1" md-colspan="1" class="{{gauge.bgColor}}">
+        <img src="assets/img/{{gauge.bgImage}}.jpg" alt="{{gauge.name}}" layout-fill>
+		<md-grid-tile-footer class="tile-title">
+			<span md-line class="gauge-count">{{gauge.cnt}}</span>
+            <h3 md-line>{{gauge.name}}</h3>
+            <button md-icon-button>
+                <md-icon>add_circle</md-icon>
+            </button>
+        </md-grid-tile-footer>
+    </md-grid-tile>
+  </md-grid-list>
+<!--<section>    
+    <md-card *ngIf="!meta.busy && partners.length===0" class="noproduct" fxLayoutAlign="center center" fxLayout="column">
+       <div>No Current Partners</div>
+       <button md-button md-raised-button class="mat-primary" routerLink="/shop"><md-icon>home</md-icon>Browse All...</button>
+    </md-card>
+     <div class="partners-cards" infinite-scroll infiniteScrollDistance="1" infiniteScrollThrottle="300" (scrolled)="scroll()"
+      fxFlex>
+      <partner-card *ngFor="let partner of partners" [partner]="partner" class="partner-card partners"></partner-card>
+    </div>
+</section> -->
+
+</div>
+</div>
+<!-- end of MAIN CONTENT -->

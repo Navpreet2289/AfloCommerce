@@ -1,0 +1,16 @@
+<md-sidenav-container class="affillio-container">
+  <!-- start of SIDE NAV -->
+  <md-sidenav #sidenav mode="side" class="sidebar">
+    <md-nav-list>
+      <div *ngFor="let affLink of affLinks">
+          <md-list-item class="nav-item">
+            <button md-icon-button class="aff-button" (click)="showResource(affLink)">
+              <md-icon class="aff-i">{{affLink.icon}} </md-icon>
+              <span class="aff-link-text">{{affLink.name}}</span>
+            </button>
+          </md-list-item>
+      </div>
+    </md-nav-list>
+  </md-sidenav>
+  <!-- end of SIDE NAV -->
+</md-sidenav-container>

@@ -1,0 +1,7 @@
+{
+  "name": "affilio",
+  "version": "0.0.2",
+  "description": "Task Manager for Affilliate Marketing Professionals",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts"
+}
