@@ -33,5 +33,9 @@ go to [http://0.0.0.0:4200](http://0.0.0.0:4200) or [http://localhost:4200](http
 
 
 ## COMING SOON! ##
+<p align="center">
+  <img src="client/assets/aflo_docs/affillio_nodejs_banner.jpg" alt="Affillio AI NodeJS Module" width="100%"/>
+</p>
 
 - Full encapsulation of [Affillio AI Module](https://github.com/MichaelLogic/AfloCommerce.git) - the modular affiliate "hunter" 
+
