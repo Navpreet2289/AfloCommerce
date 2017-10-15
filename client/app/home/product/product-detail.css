@@ -110,6 +110,8 @@ list-image{
 }
 .product-description{
     margin: 10px;
+    width: 100%;
+    max-width: 600px;
 }
 .product-details-container .price{
   font-size: 25px;

@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { Http, RequestOptions } from '@angular/http';
+
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardFilterPipe } from './universal/pipes/dashboardFilter.pipe';
+import { DashboardGuard } from './dashboard/dashboard.guard';
 import { AfloNavComponent } from './universal/nav/aflo-nav.component';
 import { PartnersComponent } from './partner/partners.component';
 import { PartnerResolve } from './partner/partner.resolve';
@@ -11,7 +15,6 @@ import { PartnersGuard } from './partner/partners.guard';
 import { PartnerDetailComponent } from './partner/partner-detail/partner-detail.component';
 import { PartnerCatalogSourcesComponent } from './partner/catalog-sources/partner-catalog-sources.component';
 import { SuggestedGoodComponent } from './suggested-good/suggested-good.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { TreeModule } from 'angular-tree-component';
 import { MdInputModule, MdMenuModule, MdCardModule, MdSlideToggleModule, MdChipsModule, MdSelectModule, MdButtonModule, MdIconModule, MdSnackBarModule, MdProgressBarModule, MdProgressSpinnerModule, MdButtonToggleModule, MdTabsModule, MdCheckboxModule, MdDatepickerModule, MdNativeDateModule, MdGridListModule } from '@angular/material';
 import { AfloCrudService } from './services/aflo-crud.service';
@@ -21,7 +24,6 @@ import { ExportComponent } from './universal/export/export.component';
 import { LabelcasePipe } from './universal/pipes/labelcase.pipe';
 import { UniquePipe } from './universal/pipes/unique.pipe';
 import { FilterPipe, ObjectFilterPipe } from './universal/pipes/filter.pipe';
-import { DashboardFilterPipe } from './universal/pipes/dashboardFilter.pipe';
 import { SearchPipe } from './universal/pipes/search.pipe';
 import { PluralizePipe } from './universal/pipes/pluralize.pipe';
 import { EditComponent } from './universal/edit/edit.component';
@@ -46,6 +48,7 @@ const affRoutes: Routes = [
   {
     path: 'dashboard', 
     component: DashboardComponent,
+    canActivate: [DashboardGuard],
     data: { title: 'Affillio Task Manager' }
   },
   {
@@ -74,7 +77,7 @@ const affRoutes: Routes = [
   ],
   exports: [AfloNavComponent, ListComponent, ExportComponent, FilterPipe, ObjectFilterPipe, DashboardFilterPipe, PluralizePipe, SearchPipe, LabelcasePipe, UniquePipe, EditComponent, SubmitButtonComponent],
   declarations: [PartnerCatalogSourcesComponent, AfloNavComponent, PartnersComponent, PartnerDetailComponent, SuggestedGoodComponent, DashboardComponent, ListComponent, ExportComponent, FilterPipe, ObjectFilterPipe, DashboardFilterPipe, PluralizePipe, SearchPipe, LabelcasePipe, UniquePipe, EditComponent, SubmitButtonComponent, MediaLibraryModal, SingleFileUploadModal],
-  providers:[AfloCrudService, CrudHelper, PartnerResolve, PartnerGuard, PartnersGuard, AuthService, UserService ],
+  providers:[DashboardGuard, AfloCrudService, CrudHelper, PartnerResolve, PartnerGuard, PartnersGuard, AuthService, UserService ],
   entryComponents: [SingleFileUploadModal, MediaLibraryModal]
 })
 export class AffillioModule { }

@@ -30,7 +30,7 @@
         MRP: {{product?.variants[selectedIndex]?.mrp | currency : Settings.currency.code:true}}
       </del>
     </div>
-    Seller: <a (click)="gotoVendor(product.vendor_id)">{{product.vendor_name}}</a>
+    <!-- Seller: <a (click)="gotoVendor(product.vendor_id)">{{product.vendor_name}}</a> -->
     <br/>
     <md-divider></md-divider><br/>
 
@@ -58,10 +58,10 @@
     </div>
     <br/>
     <md-divider></md-divider>
-    <div *ngIf="product.info">
+    <div *ngIf="product.description">
       <b>Description: </b>
       <div class="description">
-        {{product.info}}
+        {{product.description}}
       </div>
     </div>
     <br/>

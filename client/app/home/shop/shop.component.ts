@@ -4,14 +4,14 @@ import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { CrudService } from './../../shared/services/crud.service';
 import { Subscription } from 'rxjs';
 import { MdSnackBar } from '@angular/material';
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { URLSearchParams, Http } from '@angular/http';
 import * as _ from 'lodash';
 
 @Component({
   selector: 'aflocom-home',
   templateUrl: './shop.component.html',
-  styleUrls: ['./shop.component.css']
+  styleUrls: ['./shop.component.scss']
 })
 export class ShopComponent implements OnInit {
   cards: Array<any>;
@@ -27,7 +27,6 @@ export class ShopComponent implements OnInit {
   public filterForm: FormGroup;
   @Input() sort: { predicate: string, reverse: boolean };
   fl: any = { brands: [], categories: [], features: {}, price: [] };
-  priceSlider: any;
   q: any;
   categoryQueried: boolean;
   Settings: any;
@@ -51,6 +50,8 @@ export class ShopComponent implements OnInit {
       }
     }
   };
+  @ViewChild('priceSlide', { read: ElementRef }) priceSlide: ElementRef;
+
   priceRange: any = {};
   myDate: any = new Date();
   constructor(private crud: CrudService, private snack: MdSnackBar, private _fb: FormBuilder, private route: ActivatedRoute, private router: Router, private http: Http) {
@@ -65,7 +66,6 @@ export class ShopComponent implements OnInit {
     this.fl.features = { Type: [], Fit: [], Fabric: [], Neck: [], Color: [] };
     this.featuresFilter = {};
     this.brandsFilter = [];
-    this.priceSlider = {};
     this.filterForm = this._fb.group({
       slider: [10]
     });
@@ -88,7 +88,17 @@ export class ShopComponent implements OnInit {
     });
     this.busy = this.crud.get('brands').subscribe(data => this.brands = data, this.err);
     this.busy = this.crud.get('features/group').subscribe(data => this.features = data, this.err);
+
   }
+
+  // ngAfterViewInit() {
+  //   //Turn priceSlide BG purple
+  //   const connect = this.priceSlide.nativeElement.querySelectorAll('.noUi-connect');
+  //   console.log("SLIDER CLASS >> ", connect);
+  //   for ( let i = 0; i < connect.length; i++ ) {
+  //     connect[i].classList.add("slide-bg");
+  //   }
+  // }
 
   checkCategory() {
     if (this.route.params['value'].categoryId) {

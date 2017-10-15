@@ -6,7 +6,7 @@
         <button class="close" md-button md-icon-button (click)="sidenav.close()"><md-icon>close</md-icon></button>
         <md-card-content>
           <h3>Adjust Price</h3>
-          <nouislider [config]="priceSliderConfig" [min]="priceRange.min" [max]="priceRange.max" (change)="priceSliderChanged($event)"
+          <nouislider #priceSlide [config]="priceSliderConfig" [min]="priceRange.min" [max]="priceRange.max" (change)="priceSliderChanged($event)"
             [tooltips]="[ true, true ]" style="margin-top: 4em;"></nouislider>
         </md-card-content>
       </md-card>
