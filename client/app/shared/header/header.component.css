@@ -17,6 +17,12 @@ md-toolbar{
 }
 .brand{
     margin-right:20px;
+    background-color: transparent;
+    box-shadow: none;
+}
+.brand img{
+    width: 80% !important;
+    height: auto !important;
 }
 .avatar{
      overflow:hidden;
