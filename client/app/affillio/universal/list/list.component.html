@@ -60,6 +60,12 @@
               <!--<md-slide-toggle [checked]="d[f.field]" *ngSwitchCase="'boolean'"></md-slide-toggle>-->
               <md-checkbox [checked]="d[f.field]" *ngSwitchCase="'boolean'" disabled="true"></md-checkbox>
               <a *ngSwitchCase="'product-detail'" routerLink="/product/{{d[f.slug]}}/{{d[f.id]}}">{{d[f.field]}}</a>
+              <div style="text-align:center" *ngSwitchCase="'hunt-btn'">
+                <button md-button md-raised-button (click)="startHunt()">
+                  <md-icon>arrow_downwards</md-icon>Start Hunt!
+                </button>
+              </div>
+              <!-- CRUD INPUT DEFAULT  TODO:  APPLY CUSTOM CLASS -->
               <span *ngSwitchDefault>{{d[f.field]}}</span>
             </td>
             <td>
@@ -72,7 +78,9 @@
       </table>
     </div>
     <div style="text-align:center" *ngIf="!meta.busy">
-      <button md-button md-raised-button (click)="scroll()" *ngIf="!meta.end"><md-icon>arrow_downwards</md-icon>Load More...</button>
+      <button md-button md-raised-button (click)="scroll()" *ngIf="!meta.end">
+        <md-icon>arrow_downwards</md-icon>Load More...
+      </button>
     </div>
   </md-card>
 </div>

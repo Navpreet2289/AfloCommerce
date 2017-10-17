@@ -18,7 +18,7 @@ export class AfloNavComponent implements OnInit {
     ngOnInit() {
         this.affLinks = [
             { name: 'Partners', url: 'affillio/partners', icon: 'people'},
-            { name: 'Sources', url: 'affillio/sources', icon: 'pages'},
+            { name: 'Sources', url: 'affillio/catalog-sources', icon: 'pages'},
             { name: 'Suggested Goods', url: 'affillio/goods', icon: 'whatshot'},
         ];
 

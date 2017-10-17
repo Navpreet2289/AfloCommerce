@@ -89,6 +89,11 @@ abstract class BaseCtrl {
       }
     }, error => this.snack.open(<any>error, 'OK', { duration: 2000 }));
   }
+
+
+  startHunt(){
+    console.log(" :: INIT HUNT ::");
+  }
 }
 
 export default BaseCtrl;

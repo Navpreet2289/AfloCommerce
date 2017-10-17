@@ -29,6 +29,12 @@ export class CrudHelper {
             } else if (i.dataType === 'product-image') {
                 i.dataType = 'product-image';
                 o.sortType = 'lowercase';
+            } else if (i.dataType === 'partner') {
+                i.dataType = 'partner';
+                o.sortType = 'lowercase';
+            } else if (i.dataType === 'hunt-btn') {
+                i.dataType = 'hunt-btn';
+                o.sortType = 'lowercase';
             } else if (i.dataType === 'array' || i.dataType === 'multi' || i.dataType === 'multiple') {
                 i.dataType = 'array';
                 o.sortType = 'lowercase';

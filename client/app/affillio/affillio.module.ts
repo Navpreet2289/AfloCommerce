@@ -14,7 +14,10 @@ import { PartnerGuard } from './partner/partner.guard';
 import { PartnersGuard } from './partner/partners.guard';
 import { PartnerDetailComponent } from './partner/partner-detail/partner-detail.component';
 import { PartnerCatalogSourcesComponent } from './partner/catalog-sources/partner-catalog-sources.component';
-import { SuggestedGoodComponent } from './suggested-good/suggested-good.component';
+import { CatalogSourcesComponent } from './catalog-sources/catalog-sources.component';
+import { CatalogSourcesGuard } from './catalog-sources/catalog-sources.guard';
+import { SuggestedGoodsComponent } from './suggested-good/suggested-goods.component';
+import { SuggestedGoodsGuard } from './suggested-good/suggested-goods.guard';
 import { TreeModule } from 'angular-tree-component';
 import { MdInputModule, MdMenuModule, MdCardModule, MdSlideToggleModule, MdChipsModule, MdSelectModule, MdButtonModule, MdIconModule, MdSnackBarModule, MdProgressBarModule, MdProgressSpinnerModule, MdButtonToggleModule, MdTabsModule, MdCheckboxModule, MdDatepickerModule, MdNativeDateModule, MdGridListModule } from '@angular/material';
 import { AfloCrudService } from './services/aflo-crud.service';
@@ -55,7 +58,13 @@ const affRoutes: Routes = [
     path: 'partners', 
     component: PartnersComponent,
     canActivate: [PartnersGuard],
-    data: { title: 'Partner Sources' }
+    data: { title: 'Partners' }
+  },
+  {
+    path: 'catalog-sources', 
+    component: CatalogSourcesComponent,
+    canActivate: [CatalogSourcesGuard],
+    data: { title: 'Catalog Sources' }
   },
   {
     path: 'partners/:id', component: PartnerDetailComponent,
@@ -64,7 +73,7 @@ const affRoutes: Routes = [
   },
   {
     path: 'goods', 
-    component: SuggestedGoodComponent,
+    component: SuggestedGoodsComponent,
     data: { title: 'Suggested Goods' }
   }
 
@@ -76,8 +85,8 @@ const affRoutes: Routes = [
     MdInputModule, MdMenuModule, MdCardModule, MdSlideToggleModule, MdSelectModule, MdButtonModule, MdIconModule, MdSnackBarModule, MdProgressBarModule, MdProgressSpinnerModule, MdButtonToggleModule, MdTabsModule, MdCheckboxModule, MdDatepickerModule, MdNativeDateModule, MdChipsModule, MdGridListModule
   ],
   exports: [AfloNavComponent, ListComponent, ExportComponent, FilterPipe, ObjectFilterPipe, DashboardFilterPipe, PluralizePipe, SearchPipe, LabelcasePipe, UniquePipe, EditComponent, SubmitButtonComponent],
-  declarations: [PartnerCatalogSourcesComponent, AfloNavComponent, PartnersComponent, PartnerDetailComponent, SuggestedGoodComponent, DashboardComponent, ListComponent, ExportComponent, FilterPipe, ObjectFilterPipe, DashboardFilterPipe, PluralizePipe, SearchPipe, LabelcasePipe, UniquePipe, EditComponent, SubmitButtonComponent, MediaLibraryModal, SingleFileUploadModal],
-  providers:[DashboardGuard, AfloCrudService, CrudHelper, PartnerResolve, PartnerGuard, PartnersGuard, AuthService, UserService ],
+  declarations: [SuggestedGoodsComponent, CatalogSourcesComponent, PartnerCatalogSourcesComponent, AfloNavComponent, PartnersComponent, PartnerDetailComponent, DashboardComponent, ListComponent, ExportComponent, FilterPipe, ObjectFilterPipe, DashboardFilterPipe, PluralizePipe, SearchPipe, LabelcasePipe, UniquePipe, EditComponent, SubmitButtonComponent, MediaLibraryModal, SingleFileUploadModal],
+  providers:[SuggestedGoodsGuard, CatalogSourcesGuard, DashboardGuard, AfloCrudService, CrudHelper, PartnerResolve, PartnerGuard, PartnersGuard, AuthService, UserService ],
   entryComponents: [SingleFileUploadModal, MediaLibraryModal]
 })
 export class AffillioModule { }

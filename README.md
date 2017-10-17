@@ -37,6 +37,14 @@ go to [http://0.0.0.0:4200](http://0.0.0.0:4200) or [http://localhost:4200](http
   <img src="client/assets/aflo_docs/affillio_nodejs_banner.jpg" alt="Affillio AI NodeJS Module" width="100%"/>
 </p>
 
+# The Birth of the AfloHunter Class
+The "hunter" can be seen like as the method man that carries out the tasks of:
+	- scraping Catalog Sources
+	- providing code pattern intel to Affillio Module
+	- managing the interpretation of incoming data for conversion to a Suggested Good
+	- classification and regression of scraped data for machine learning
+	- broadcasting hunter status
+
 - Full encapsulation of [Affillio AI Module](https://github.com/MichaelLogic/AfloCommerce.git) - the modular affiliate "hunter"
 
 - Uploaded media storage with Amazon S3
