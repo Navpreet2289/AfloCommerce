@@ -31,25 +31,25 @@ npm start
 ```
 go to [http://0.0.0.0:4200](http://0.0.0.0:4200) or [http://localhost:4200](http://localhost:4200) in your browser
 
+## Minor AfloCommerce Dev issues 
+- Login Authorization requires a refresh after sign in.  A polished emitter will be added soon 
+- needs to accomodate parent and child categories in the "Category" dropdown in shop
 
-## COMING SOON! ##
 <p align="center">
   <img src="client/assets/aflo_docs/affillio_nodejs_banner.jpg" alt="Affillio AI NodeJS Module" width="100%"/>
 </p>
 
 # The Birth of the AfloHunter Class
 The "hunter" can be seen like as the method man that carries out the tasks of:
-	- scraping Catalog Sources
-	- providing code pattern intel to Affillio Module
-	- managing the interpretation of incoming data for conversion to a Suggested Good
-	- classification and regression of scraped data for machine learning
-	- broadcasting hunter status
+- scraping Catalog Sources
+- providing code pattern intel to Affillio Module
+- managing the interpretation of incoming data for conversion to a Suggested Good
+- classification and regression of scraped data for machine learning
+- broadcasting hunter status
 
-- Full encapsulation of [Affillio AI Module](https://github.com/MichaelLogic/AfloCommerce.git) - the modular affiliate "hunter"
 
-- Uploaded media storage with Amazon S3
+## COMING SOON! ##
+Full encapsulation of [Affillio AI Module](https://github.com/MichaelLogic/AfloCommerce.git) - the modular affiliate "hunter"
 
-## Minor AfloCommerce Dev issues 
-- Login Authorization requires a refresh after sign in.  A polished emitter will be added soon 
-- needs to accomodate parent and child categories in the "Category" dropdown in 
+Uploaded media storage with Amazon S3
 
