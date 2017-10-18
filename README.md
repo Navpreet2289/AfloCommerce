@@ -35,6 +35,8 @@ go to [http://0.0.0.0:4200](http://0.0.0.0:4200) or [http://localhost:4200](http
 - Login Authorization requires a refresh after sign in.  A polished emitter will be added soon 
 - needs to accomodate parent and child categories in the "Category" dropdown in shop
 
+- Heavy Affillio functions development in progress:  This open-source project has been exposed to empower technology firms currently working with Michael Logic™ Administration. Please be aware that this project is in version 0.1+ release and will change drastically at the publish of Affillio v.1.0.  
+
 <p align="center">
   <img src="client/assets/aflo_docs/affillio_nodejs_banner.jpg" alt="Affillio AI NodeJS Module" width="100%"/>
 </p>
