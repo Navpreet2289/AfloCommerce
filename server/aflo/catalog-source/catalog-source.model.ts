@@ -2,7 +2,6 @@ import * as mongoose from 'mongoose';
 let ObjectId = mongoose.Schema.ObjectId;
 
 let CatalogSourceSchema = new mongoose.Schema({
-  partner: { type: ObjectId, ref: 'Partner' },
   title: String,
   description: String,
   sourcePath: String,

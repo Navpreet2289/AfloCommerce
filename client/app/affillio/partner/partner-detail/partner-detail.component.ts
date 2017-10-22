@@ -25,8 +25,12 @@ export class PartnerDetailComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.crud.get('catalog-sources').subscribe(data => this.catalogSources = data, this.handleError);
+    //this.crud.get('catalog-sources').subscribe(data => this.catalogSources = data, this.handleError);
     this.partner = this.route.snapshot.data['partner'];
+    if(this.partner.catalogSources){
+      console.log("SOURCES PRESENT >>", JSON.stringify(this.partner));
+    }
+
     let id = this.route.snapshot.params['id'];
     this.header = (id === 'add' || id === 'new') ? "Add New Partner" : "Edit Partner - " + id;
     this.partnerForm = this._fb.group({
@@ -38,13 +42,11 @@ export class PartnerDetailComponent implements OnInit {
       country: [this.partner.country, []],
       catalogSources: this._fb.array([])
     });
-
-    console.log("init Partner Detail Inspection >>", JSON.stringify(this.partner));
     this.addCatalogSource(this.partner.catalogSources);
   }
 
   initCatalogSource(a?: any) {
-    return this._fb.group({ title: [a.title], sourcePath: [a.sourcePath] });
+    return this._fb.group({sourceId:[a.sourceId], title:[a.title], sourcePath: [a.sourcePath] });
   }
 
   addCatalogSource(a?: any) {

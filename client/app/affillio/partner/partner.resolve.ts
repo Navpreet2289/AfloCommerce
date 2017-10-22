@@ -11,6 +11,7 @@ export class PartnerResolve implements Resolve<any> {
   resolve(route: ActivatedRouteSnapshot) {
     let id = route.params['id'];
     //return (id === 'add' || id === 'new') ? undefined : this.crud.getOne('partners', id, true);
-    return (id === 'add' || id === 'new') ? {} : this.crud.getOne('partners', id);
+    //return (id === 'add' || id === 'new') ? {} : this.crud.getOne('partners', id);
+    return (id === 'add' || id === 'new') ? {} : this.crud.getOne('partners/deep/', id, false);
   }
 }

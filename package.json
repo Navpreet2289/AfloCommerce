@@ -53,6 +53,7 @@
     "angular2-busy": "^2.0.4",
     "angular2-jwt": "^0.2.3",
     "angular2-moment": "^1.3.3",
+    "async": "^2.5.0",
     "body-parser": "^1.17.1",
     "bootstrap": "4.0.0-alpha.5",
     "composable-middleware": "^0.3.0",

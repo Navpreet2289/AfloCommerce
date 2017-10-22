@@ -71,6 +71,7 @@ export default class ProductCtrl extends BaseCtrl {
     //   .then(this.respondWithResult(res))
     //   .catch(this.handleError(res));
   }
+  
   // Gets a single Product from the DB
   showDeep = (req, res) => {
     return Product.findById(req.params.id).populate({ path: 'brand' }).populate({ path: 'category' }).exec((err, docs) => {
