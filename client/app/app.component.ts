@@ -1,6 +1,3 @@
-/**
- * Angular 2 decorators and services
- */
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { AppState } from './app.service';
 import { Http } from '@angular/http';

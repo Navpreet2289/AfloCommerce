@@ -3,6 +3,6 @@ export class CatalogSource {
     	{ field: 'partner', dataType: 'partner' },
     	{ field: 'title' },
         { field: 'sourcePath' },
-        { field: 'startHunt', dataType: 'huntBtn' }
+        { field: 'startHunt', dataType: 'hunt-btn' }
     ];
 }
