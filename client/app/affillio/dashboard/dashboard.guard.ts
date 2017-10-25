@@ -12,11 +12,9 @@ export class DashboardGuard implements CanActivate {
     canActivate(route: ActivatedRouteSnapshot): Observable<boolean> | Promise<boolean> | boolean {
         
         if(this.auth.hasRole('admin')){
-        	console.log("SHOULD BE ADMIN >> ", this.auth);
             return true;
         } 
 
-        console.log("NOT ADMIN >> ", this.auth);
         this.modal.login().subscribe((result: any) => {
 					     //    if(result){
 					     //    	this.router.navigate('./admin');
@@ -24,7 +22,6 @@ export class DashboardGuard implements CanActivate {
 					    	// 	this.router.navigate('/');
 					    	// }
 					      });
-
         return Observable.of(false);
     }
 }

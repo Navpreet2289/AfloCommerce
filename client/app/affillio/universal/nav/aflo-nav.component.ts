@@ -27,7 +27,6 @@ export class AfloNavComponent implements OnInit {
 
     showResource(affLink?: any) {
       //this.selected_url = url;
-      console.log("AFLO NAVIGATION >>  ", affLink.url);
       this.router.navigateByUrl(affLink.url);
   }
     

@@ -12,11 +12,10 @@ export class SuggestedGoodsGuard implements CanActivate {
     canActivate(route: ActivatedRouteSnapshot): Observable<boolean> | Promise<boolean> | boolean {
         
         if(this.auth.hasRole('admin')){
-        	console.log("SHOULD BE ADMIN >> ", this.auth);
             return true;
         } 
 
-        console.log("NOT ADMIN >> ", this.auth);
+        //NOT ADMIN
         this.modal.login().subscribe((result: any) => {
 					     //    if(result){
 					     //    	this.router.navigate('./admin');
@@ -24,7 +23,6 @@ export class SuggestedGoodsGuard implements CanActivate {
 					    	// 	this.router.navigate('/');
 					    	// }
 					      });
-
         return Observable.of(false);
     }
 }

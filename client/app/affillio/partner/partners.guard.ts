@@ -10,7 +10,7 @@ export class PartnersGuard implements CanActivate {
     canActivate(route: ActivatedRouteSnapshot): Observable<boolean> | Promise<boolean> | boolean {
         return this.crud.get('partners', null, true)
             .map(e => { if (e) { return true; } }).catch(() => {
-                // this.router.navigate(['/account/login', { returnUrl: '/admin/users' }]);
+                
                 this.modal.login().subscribe();
                 return Observable.of(false);
             });
